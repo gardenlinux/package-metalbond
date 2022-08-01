@@ -1,0 +1,25 @@
+stages:
+- download
+- deploy
+
+
+variables:
+  DEBFULLNAME: "Garden Linux builder"
+  DEBEMAIL: "contact@gardenlinux.io"
+  BUILD_ARCH_ALL: 'true'
+  BUILD_ARCH_AMD64: 'true'
+  BUILD_ARCH_ARM64: ''
+  BUILD_SIGNED: ''
+  GITHUB_REPO: 'https://github.com/onmetal/metalbond'
+
+
+workflow:
+  rules:
+    - if: '$CI_COMMIT_TAG'
+
+include:
+- local: .gitlab/ci/download-release-artifacts.yml
+#- project: gardenlinux/gardenlinux-package-build
+#  file:
+#  - pipeline/deploy.yml
+
