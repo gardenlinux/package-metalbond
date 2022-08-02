@@ -19,6 +19,7 @@
   script:
   - |
     echo '### pulling existing orig via lfs-storage'
+    git checkout lfs-storage
     git fetch --quiet --depth 1 origin lfs-storage
     git lfs pull --include "metalbond_${UPSTREAM_VERSION}.*"
     mkdir _output
