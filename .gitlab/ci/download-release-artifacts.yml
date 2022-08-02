@@ -24,10 +24,10 @@
     echo '### fetch lfs storage'
     git fetch --quiet --depth 1 origin lfs-storage
     echo '### pull lfs storage'
-    git lfs pull --include "metalbond_${UPSTREAM_VERSION}.*"
+    git pull
+    target_deb=$(git lfs ls-files --all | grep ${TARGET_ARCH} | cut -d ' ' -f3 | sort -r | head -n 1)
     mkdir _output
-    cp *.deb _output
-    cd _output
+    cp ${target_deb} _output
 
   artifacts:
     paths:
