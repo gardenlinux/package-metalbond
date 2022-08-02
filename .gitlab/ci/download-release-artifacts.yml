@@ -13,14 +13,17 @@
     fi
     if [[ $CI_DISPOSABLE_ENVIRONMENT ]]; then
       apt-get update -qy
-      apt-get install -qy --no-install-recommends wget ca-certificates
+      apt-get install -qy --no-install-recommends wget ca-certificates pristine-lfs
     fi
 
   script:
   - |
+    echo '### pulling existing orig via pristine-lfs'
+    git fetch --quiet --depth 1 origin pristine-lfs
+    pristine-lfs checkout "metalbond_${UPSTREAM_VERSION}.*" || true
     mkdir _output
+    cp *.deb _output
     cd _output
-    wget https://github.com/onmetal/metalbond/releases/download/v${UPSTREAM_VERSION}/metalbond_${UPSTREAM_VERSION}_${TARGET_ARCH}.deb
 
   artifacts:
     paths:
