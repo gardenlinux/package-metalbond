@@ -1,16 +1,24 @@
 stages:
-- download
+- source
+- build
+- signed source
+- signed build
+- test
 - deploy
-
 
 variables:
   DEBFULLNAME: "Garden Linux builder"
   DEBEMAIL: "contact@gardenlinux.io"
   BUILD_ARCH_ALL: 'true'
   BUILD_ARCH_AMD64: 'true'
-  BUILD_ARCH_ARM64: ''
+  BUILD_ARCH_ARM64: 'true'
   BUILD_SIGNED: ''
-  GITHUB_REPO: 'https://github.com/onmetal/metalbond'
+
+build amd64:
+  tags: []
+
+build arm64:
+  tags: []
 
 
 workflow:
@@ -18,10 +26,12 @@ workflow:
     - if: $CI_COMMIT_BRANCH == "lfs-storage"
       when: always
       
-
 include:
-- local: .gitlab/ci/download-release-artifacts.yml
-#- project: gardenlinux/gardenlinux-package-build
-#  file:
-#  - pipeline/deploy.yml
-
+- local: .gitlab/ci/source.yml
+- project: gardenlinux/gardenlinux-package-build
+  file:
+  - pipeline/workflow.yml
+  - pipeline/build.yml
+  - pipeline/signed-source.yml
+  - pipeline/signed-build.yml
+  - pipeline/deploy.yml
