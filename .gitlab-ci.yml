@@ -9,5 +9,6 @@ variables:
 
 include:
 - project: gardenlinux/gardenlinux-package-build
+  ref: debug
   file:
   - pipeline/pipeline.yml      
