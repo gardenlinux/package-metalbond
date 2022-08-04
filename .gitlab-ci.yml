@@ -7,9 +7,10 @@ variables:
   BUILD_SIGNED: ''
   ORIG_TAR: 'metalbond_0.2.0.orig.tar.gz'
   SOURCE_NAME: 'metalbond'
+  BUILD_REQUIRES_GO: 'true'
 
 include:
 - project: gardenlinux/gardenlinux-package-build
-  ref: debug
+  ref: metalbond
   file:
   - pipeline/pipeline.yml      
