@@ -1,7 +1,7 @@
 variables:
   DEBFULLNAME: "Garden Linux builder"
   DEBEMAIL: "contact@gardenlinux.io"
-  BUILD_ARCH_ALL: 'true'
+  BUILD_ARCH_ALL: ''
   BUILD_ARCH_AMD64: 'true'
   BUILD_ARCH_ARM64: 'true'
   BUILD_SIGNED: ''
