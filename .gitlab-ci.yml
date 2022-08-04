@@ -11,6 +11,5 @@ variables:
 
 include:
 - project: gardenlinux/gardenlinux-package-build
-  ref: metalbond
   file:
   - pipeline/pipeline.yml      
