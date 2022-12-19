@@ -1,15 +1,9 @@
-variables:
-  DEBFULLNAME: "Garden Linux builder"
-  DEBEMAIL: "contact@gardenlinux.io"
-  BUILD_ARCH_ALL: ''
-  BUILD_ARCH_AMD64: 'true'
-  BUILD_ARCH_ARM64: 'true'
-  BUILD_SIGNED: ''
-  ORIG_TAR: 'metalbond_0.2.0.orig.tar.gz'
-  SOURCE_NAME: 'metalbond'
-  BUILD_REQUIRES_GO: 'true'
-
 include:
-- project: gardenlinux/gardenlinux-package-build
-  file:
-  - pipeline/pipeline.yml      
+  project: gardenlinux/gardenlinux-package-build
+  file: pipeline/pipeline-git.yml
+
+variables:
+  SOURCE_NAME: 'metalbond'
+  SOURCE_REPO: https://github.com/onmetal/metalbond
+  BUILD_ARCH_ALL: ''
+  BUILD_REQUIRES_GO: 'true'
