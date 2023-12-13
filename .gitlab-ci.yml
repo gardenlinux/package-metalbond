@@ -12,7 +12,7 @@ build arm64:
 
 variables:
   SOURCE_NAME: 'metalbond'
-  SOURCE_REPO: git@github.com:ironcore-dev/metalbond.git
+  SOURCE_REPO: ssh://git@ssh.github.com:443/ironcore-dev/metalbond
   SOURCE_TAG_PREFIX: 'v'
   BUILD_ARCH_ALL: ''
   BUILD_REQUIRES_GO: 'true'
