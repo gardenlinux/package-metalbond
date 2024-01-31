@@ -1,2 +1,3 @@
 git_src --branch v0.3.5 https://github.com/ironcore-dev/metalbond.git
 apply_patches
+version_suffix=gardenlinux0
