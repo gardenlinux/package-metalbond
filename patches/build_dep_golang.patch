@@ -1,0 +1,13 @@
+diff --git a/debian/control b/debian/control
+index 3f3689c..06009d0 100644
+--- a/debian/control
++++ b/debian/control
+@@ -2,7 +2,7 @@ Source: metalbond
+ Maintainer: Malte Janduda
+ Section: net
+ priority: optional
+-Build-Depends: debhelper-compat (= 13)
++Build-Depends: debhelper-compat (= 13), golang
+
+ Package: metalbond
+ Architecture: linux-any
