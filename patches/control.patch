@@ -1,0 +1,9 @@
+--- a/debian/control	2026-02-02 11:27:24.745184860 +0100
++++ b/debian/control	2026-02-02 11:27:59.250171009 +0100
+@@ -1,5 +1,5 @@
+ Source: metalbond
+-Maintainer: Malte Janduda
++Maintainer: Malte Janduda <name@placeholder.xyz>
+ Section: net
+ priority: optional
+ Build-Depends: debhelper-compat (= 13)

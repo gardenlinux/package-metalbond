@@ -1,2 +1,3 @@
 build_dep_golang.patch
 rules.patch
+control.patch
